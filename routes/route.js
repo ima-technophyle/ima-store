@@ -9,7 +9,7 @@ module.exports = (app) => {
   app.use(express.json());
   app.use("/api/users", users);
 
-  app.get("*", (resp) => {
+  app.get("*", (req, resp) => {
     resp.status(404).send("PATH NOT FOUND");
   });
 
